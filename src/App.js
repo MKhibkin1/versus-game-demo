@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.scss';
 import {
   Routes,
@@ -7,19 +6,14 @@ import {
 } from "react-router-dom";
 
 import react from 'react'
-
 import {Explore, Login, } from 'views'
-
 import {connect} from 'react-redux'
-
-
 
 function connectedApp(props){
   return (
     <div className="App" id="main-screen">
       <Routes>
         <Route index element={<Login />} /> 
-        {/* <Route path="/explore" element={props.loggedIn ? <Explore /> : null}/> */}
         <Route path="/explore" element={props.loggedIn ? <Explore /> : null}/>
       </Routes>
     </div>
@@ -33,7 +27,6 @@ const mapStateToProps = (state) => {
       }
   )
 }
-
 
 const App = connect(
   mapStateToProps,

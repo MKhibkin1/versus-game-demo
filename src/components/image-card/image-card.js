@@ -48,7 +48,6 @@ class ConnectedImageCard extends Component{
                 //update in state
                 this.props.updateLikedImages(data[this.props.currentUser].likedImages)
             )
-
         })
     }
 
@@ -75,8 +74,6 @@ class ConnectedImageCard extends Component{
                     </CardActions>
                 </Card>     
             </div>
-  
-
         )
     }
 }

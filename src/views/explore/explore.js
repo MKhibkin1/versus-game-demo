@@ -20,9 +20,6 @@ class ConnectedExplore extends Component{
         fetch(`https://api.unsplash.com/search/photos/?page=1&per_page=60&query=${this.state.searchQuery}&client_id=${APP_ID}`)
         .then(resp => resp.json())
         .then(data => this.setState({images: data.results, searchExecuted: true}))
-        // document.getElementById("root").scrollTo({top: 0,  behavior: 'smooth' })
-        // document.body.scrollTo({ top: 0})
-        window.scrollTo(0)
     }
 
     renderImages = () => {
@@ -67,7 +64,6 @@ class ConnectedExplore extends Component{
                         onRequestSearch={this.queryUnsplash}
                         placeholder="Search Unsplash For Images"
                     />
-
                 </div>
 
                 <div className="images-container">
@@ -79,7 +75,6 @@ class ConnectedExplore extends Component{
         )
     }
 }
-
 
 const mapStateToProps = (state) => {
     return(
