@@ -1,0 +1,27 @@
+.card-container{
+
+    padding:2%;
+    display: flex;
+    .card{
+        
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        img{
+            width: 100%;
+            height: 60%;
+        }
+        .description{
+            height: 30%;
+            overflow: hidden;
+        }
+
+        .actions{
+            height: 10%;
+        }
+
+    }
+
+}

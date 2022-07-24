@@ -1,25 +1,48 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 
-function App() {
+import react from 'react'
+
+import {Explore, Login, } from 'views'
+
+import {connect} from 'react-redux'
+
+
+
+function connectedApp(props){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" id="main-screen">
+      <Routes>
+        <Route index element={<Login />} /> 
+        {/* <Route path="/explore" element={props.loggedIn ? <Explore /> : null}/> */}
+        <Route path="/explore" element={props.loggedIn ? <Explore /> : null}/>
+      </Routes>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return(
+      {
+          loggedIn: state.loggedIn,
+      }
+  )
+}
+
+
+const App = connect(
+  mapStateToProps,
+  null
+)(connectedApp)
+
+export default App
+
+
+
+
+
